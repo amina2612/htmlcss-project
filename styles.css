@@ -1,0 +1,434 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* resetovanje stranice, margina i paddinga radi ljepseg izgleda */
+
+
+body{
+    background-color: #ddd;
+}
+
+/*pozadinska boja siva*/
+
+a {
+    color:#000;
+    text-decoration: none; /*bez crtice ispod linka*/
+    transition: .3s; /*kod hovera sporija tranzicija od .3s*/
+}
+
+/*podesavanje boje linkova*/
+
+a:hover {
+    background:#abc0ce;
+    color:#fff;
+    transition: .3s; /*kod hovera sporija tranzicija od .3s*/
+}
+
+/*hover preko linkova*/
+
+
+
+
+.container {
+    display:grid;
+    grid-template-columns: repeat(17,1fr); /*17 kolona jednake velicine sa repeat funkcijom*/
+    grid-template-rows:5vh 90vh 5vh; /*3 reda, pocetni i krajni su najmanji a srednji najveci*/
+}
+
+/*grid container u kojem se nalazi stranica*/
+
+.header {
+    background-color: #f1f1f1;
+    padding:10px;
+    grid-column: 1 / -1;
+    grid-row:1/2;
+    display:flex;
+    justify-content:space-evenly;
+    font-family:arial;
+    text-transform: uppercase;
+    font-size:9px;
+}
+
+/*header sa navigacijom*/
+
+.pics {
+    display:flex;
+    justify-content: space-evenly;
+    width:890px;
+    flex-wrap:wrap;
+}
+
+/*klasa sa slikama iz sekcije content*/
+
+
+.himage {
+    grid-column: 1 / -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:grid;
+    display:flex;
+    justify-content:center;
+    justify-self: stretch;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:33% 33% 33%;
+}
+
+/*pozadinska slika sa tekstom preko*/
+
+.himage h1 {
+    position:absolute;
+    z-index:999;
+    align-self: center;
+    justify-self: center;
+    background:#ddd;
+    margin-top:-19px;
+    color:rgb(73, 83, 72);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*veliki naslov*/
+
+.himage p {
+    position: absolute;
+    margin-top:46px;
+    align-self: center;
+    justify-self: center;
+    background:#ddd;
+    color:rgb(73, 83, 72);
+    width:547px;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*mali naslov, description*/
+
+
+.himage img {
+    width:100%;
+    padding-top:7px;
+    padding-bottom:9px;
+}
+
+/*velika pozadinska slika*/
+
+
+.sidebar {
+    background-color:#eee;
+    padding:10px;
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+    font-family:arial;
+    color:#131313;
+    text-transform: uppercase;
+    font-size:9px;
+    overflow-y:scroll; /*kad se popuni originalna velicina, predje se na scrollovanje*/
+    transition:1s;
+}
+
+/*sidebar sa lijeve strane sa slikama umjetnika*/
+
+.sidebar img {
+    height:120px;
+    padding:3px;
+    width:120px;
+}
+
+/*sličice umjetnika*/
+
+.sidebar h1 {
+    font-size:13px;
+}
+
+/*h1 sidebara*/
+
+.txt {
+    display:flex;
+    line-height: 1.5em;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/*biografija pisaca*/
+
+.sidebar p {
+    text-align: justify;
+    width:110%;
+    padding:7px;
+}
+
+/*paragraf sidebara*/
+
+
+.content {
+    background-color:#eee;
+    padding:10px;
+    color:#131313;
+    grid-column:4 / 13;
+    grid-row: 2/4;
+    font-family:arial;
+    text-transform: uppercase;
+    overflow-y:scroll;
+    transition:1s;
+    font-size:9px;
+}
+
+/*glavni dio stranice sa velikim slikama*/
+
+
+.content h1 {
+    font-size:13px;
+}
+
+/*content naslov*/
+
+.content:hover {
+    transition:1s;
+    background:#abc0ce;
+}
+
+/*content hover*/
+
+.content img {
+    display:inline-block;
+    padding:2px;
+    height:200px;
+}
+
+/*content slike*/
+
+.footer{
+    background:#f1f1f1;
+    padding:10px;
+    grid-column:13 / -1;
+    grid-row: 2/4;
+    font-family:arial;
+    text-transform: uppercase;
+    font-size:13px;
+    transition:1s;
+}
+
+/*"footer" odnosno sekcija sa formaom*/
+
+.footer:hover {
+    transition:1s;
+    background:#abc0ce;
+}
+
+/*footer hover*/
+
+
+.sidebar:hover {
+    transition:1s;
+    background:#abc0ce;
+}
+
+/*sidebar hover*/
+
+
+.speaker-form{
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  text-align:center;
+}
+
+/*forma*/
+
+.speaker-form-header {
+    text-align: left;
+    font-weight: bold;
+}
+
+/*header forme*/
+
+
+.form-row {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/*red forme*/
+
+
+.form-row input[type='text'],.form-row input[type='email'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 100%;
+    padding: 2px;
+    font-size: 14px;
+}
+
+/*text, email input u formu*/
+
+
+.form-row label {
+    margin-bottom: 3px;
+}
+
+/*label ispod kojeg se unosi text/email u formu*/
+
+
+.form-row textarea {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+  
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+  
+    min-height: 200px;
+    margin-bottom: 10px;
+    padding: 7px;
+    resize: none;
+}
+
+/*veliki prostor za duzi tekst*/
+
+.form-row .instructions {
+    color: #999999;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/*ispod dijela za duzi tekst upute sta unijeti*/
+
+
+.form-row input[type='text']:invalid,
+.form-row input[type='email']:invalid {
+  border: 1px solid #D55C5F;
+  color: #D55C5F;
+  box-shadow: none;
+}
+
+/*crvena boja ako unesemo pogresan tekst ili email*/
+
+.form-row button {
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #abc0ce;
+  border: none;
+  border-radius: 3px;
+  transition:1s;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+
+/*submit dugme*/
+
+.form-row button:hover {
+  background-color: #fff;
+  transition:1s;
+  color:#000;
+}
+
+/*hover na submit dugme*/
+
+.form-row button:active {
+  background-color: #eee;
+}
+
+/*pozadinska boja dugmeta nakon sto je kliknuto*/
+
+@media only screen and (max-width: 414px){
+    .content{
+        grid-column:9/-1;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+    }
+    .content img {
+        height:100px;
+    }
+    .sidebar{
+        grid-column:1/8;
+        z-index:9999;
+    }
+
+    .sidebar p {
+        width:150%;
+    }
+    .sidebar img {
+        padding-right:30px;
+        width:110px;
+        height:90px;
+    }
+
+    .himage h1{
+       font-size:70%;
+    }
+
+    .himage p {
+      font-size:50%;
+      width:50%;
+      margin-top:25px;
+    }
+    .himage img {
+        padding:0;
+    }
+
+    .footer{
+        grid-row:3/4;
+        grid-column: 1/-1;
+        z-index:999999;
+    }
+
+    .form-row textarea {
+        min-height:100px;
+        padding-bottom:1px;
+    }
+    .form-row button {
+        margin-top:-30px;
+    }
+  }
+
+  
+/*responsive design za telefon*/
+
+
+
+  @media only screen and (min-width: 415px) and (max-width: 960px) {
+    .content{
+        grid-column:5/-1;
+        display:flex;
+        grid-row:1/3;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    
+    }
+
+    .content img {
+        height:100px;
+    }
+
+    .footer{
+        grid-row:3/4;
+        grid-column: 1/-1;
+        z-index:999999;
+    }
+
+    .himage h1{
+        font-size:90%;
+        margin-top:15px;
+     }
+
+     .himage p {
+         font-size:60%;
+     }
+
+     .form-row textarea {
+        min-height:100px;
+        padding-bottom:1px;
+    }
+    .form-row button {
+        margin-top:-30px;
+    }
+}
+
+/*responsive design za tablet*/
